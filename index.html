@@ -1,11 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<title>대림정밀</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>정밀가공 1인 공장 — 빠르고 정확한 CNC/밀링/선반 가공</title>
+	<meta name="description" content="소량·긴급·시제품 환영. CNC/밀링/선반 정밀가공 전문 1인 공장. 빠른 견적과 당일 피드백, 높은 정밀도(±0.01mm) 제공." />
+	<meta name="format-detection" content="telephone=no" />
+	<meta property="og:title" content="정밀가공 1인 공장" />
+	<meta property="og:description" content="소량·긴급·시제품 환영. CNC/밀링/선반 정밀가공 전문." />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%23007aff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='72'>Precision Machining</text></svg>" />
+	<meta name="theme-color" content="#0b5cff" />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%230b5cff%22/><path d=%22M18 34l10 10 18-24%22 stroke=%22white%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+	<style>
+        :root{
+            --brand:#0b5cff; --brand-2:#0041d9; --ink:#131722; --muted:#6b7280; --bg:#f7f8fb; --card:#ffffff; --ok:#0ea5e9; --accent:#22c55e;
+            --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Pretendard,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+        a{color:var(--brand);text-decoration:none}
+        img{max-width:100%;height:auto;border-radius:12px}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.2rem;border-radius:999px;border:1px solid transparent;background:var(--brand);color:#fff;font-weight:700;box-shadow:var(--shadow);transition:.2s}
+        .btn:hover{background:var(--brand-2);transform:translateY(-1px)}
+        .btn.outline{background:#fff;color:var(--brand);border-color:var(--brand);box-shadow:none}
+        header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.84);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e5e7eb}
+        header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+        header .brand{display:flex;align-items:center;gap:.6rem;font-weight:900}
+        header nav a{margin-left:1rem;color:var(--ink)}
+        .hero{padding:64px 0 28px;background:linear-gradient(180deg,#ffffff, #eef3ff)}
+        .hero .lead{font-size:clamp(28px,4.5vw,44px);line-height:1.2;margin:.2em 0 .4em;font-weight:900}
+        .hero p{color:var(--muted);max-width:720px}
+        .hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:20px}
+        .grid{display:grid;gap:20px}
+        .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+        .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+        @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
+        @media (max-width:640px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+        section{padding:56px 0}
+        .card{background:var(--card);border:1px solid #eef0f4;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+        .kpis{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+        .kpi{flex:1 1 160px;background:#fff;border:1px solid #eef0f4;border-radius:14px;padding:16px;text-align:center}
+        .kpi strong{display:block;font-size:24px}
+        .list{margin:0;padding:0 0 0 18px}
+        .muted{color:var(--muted)}
+        .badge{display:inline-block;background:#eef3ff;color:#002c8f;border:1px solid #dfe7ff;padding:.25rem .6rem;border-radius:999px;font-weight:700;font-size:.8rem}
+        .cta{background:linear-gradient(180deg,#0b5cff,#0041d9);color:#fff;padding:40px;border-radius:20px;box-shadow:var(--shadow)}
+        .cta .btn{background:#fff;color:#0b5cff;border-color:#fff}
+        footer{padding:40px 0;color:#4b5563}
+        /* 모바일 하단 고정 콜버튼 */
+        .callbar{position:fixed;left:0;right:0;bottom:10px;display:none;justify-content:center;z-index:60}
+        .callbar .callbtn{display:flex;gap:.6rem;align-items:center;background:#0b5cff;color:#fff;border-radius:999px;padding:14px 18px;box-shadow:var(--shadow);font-weight:800}
+        .callbar .callbtn small{font-weight:600;opacity:.9}
+        @media (max-width:780px){.callbar{display:flex}}
+        /* 가벼운 애니메이션 */
+        .reveal{opacity:0;transform:translateY(6px);transition:opacity .5s ease, transform .5s ease}
+        .reveal.on{opacity:1;transform:none}
+        /* 문의 폼 */
+        form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        @media(max-width:640px){form .row{grid-template-columns:1fr}}
+        input,textarea{width:100%;border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;font-size:16px}
+        textarea{min-height:120px;resize:vertical}
+        .note{font-size:.9rem;color:#6b7280}
+        /* 작은 아이콘 스타일 */
+        .ic{width:20px;height:20px;display:inline-block;vertical-align:middle}
+	</style>
+	<!-- 구조화 데이터 (LocalBusiness) : TODO 값 교체 -->
+	<script type="application/ld+json">
+		{
+			"@context":"https://schema.org",
+			"@type":"LocalBusiness",
+			"name":"정밀가공 1인 공장",                /* TODO: 상호명 */
+			"image":"",                               /* 로고/사진 URL 가능 */
+			"address":{"@type":"PostalAddress","streetAddress":"", "addressLocality":"", "addressRegion":"", "postalCode":"", "addressCountry":"KR"}, /* TODO: 주소 */
+			"telephone":"+82-10-1234-5678",          /* TODO: 전화번호 */
+			"openingHours":"Mo-Fr 09:00-18:00",
+			"url":"",                                 /* GitHub Pages 주소 가능 */
+			"sameAs":[]
+		}
+	</script>
 </head>
 <body>
-	안녕하세요 대림정밀 입니다.
-	안녕하세요 이영인씨 이소영씨
+<!-- 모바일 하단 콜버튼 -->
+<div class="callbar">
+	<a class="callbtn" href="tel:+821012345678"><span>📞 지금 전화하기</span> <small>(상담 바로 연결)</small></a>
+</div>
+
+<header>
+	<div class="container wrap">
+		<div class="brand">
+			<!-- 간단 로고 -->
+			<svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15l7-10 3 5 6-2-7 11-3-5-6 1z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			<span>정밀가공 1인 공장</span> <!-- TODO: 상호명 -->
+		</div>
+		<nav>
+			<a href="#services">가공분야</a>
+			<a href="#capability">정밀도/설비</a>
+			<a href="#works">사례</a>
+			<a href="#contact">문의</a>
+		</nav>
+	</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+	<div class="container">
+		<span class="badge">소량·긴급·시제품 환영</span>
+		<h1 class="lead">±0.01mm까지 잡아내는 <br/>정밀가공 1인 공장</h1>
+		<p>도면만 전달해 주세요. 소재 선택부터 공정 제안, 후가공(열처리/표면처리)까지 한 번에 도와드립니다. 신속한 피드백과 일정 준수로
+			<strong>개발 일정</strong>을 지켜드립니다.</p>
+		<div class="hero-cta">
+			<a class="btn" href="tel:+821012345678">📞 전화 연결</a> <!-- TODO: tel 교체 -->
+			<a class="btn outline" href="#contact">견적 문의</a>
+		</div>
+		<div class="kpis">
+			<div class="kpi"><strong>±0.01mm</strong><span class="muted">허용공차(부품/공정에 따라 협의)</span></div>
+			<div class="kpi"><strong>24h~</strong><span class="muted">빠른 견적/피드백</span></div>
+			<div class="kpi"><strong>1:1</strong><span class="muted">직접 소통/책임 제작</span></div>
+		</div>
+	</div>
+</section>
+
+<!-- 서비스 -->
+<section id="services">
+	<div class="container grid cols-3">
+		<div class="card reveal">
+			<h3>밀링/CNC</h3>
+			<ul class="list">
+				<li>3축 가공 (알루미늄/동/황동/플라스틱)</li>
+				<li>홈/포켓/텐던·모탈 가공</li>
+				<li>탭/리머/카운터보어</li>
+			</ul>
+		</div>
+		<div class="card reveal">
+			<h3>선반</h3>
+			<ul class="list">
+				<li>축/부시/피팅류 소량 제작</li>
+				<li>내/외경 정밀가공, 나사 절삭</li>
+				<li>면취/버어 제거 깔끔</li>
+			</ul>
+		</div>
+		<div class="card reveal">
+			<h3>후가공/조립</h3>
+			<ul class="list">
+				<li>양극산화, 흑착, 아연/니켈 도금</li>
+				<li>열처리(담금질/풀림/질화)</li>
+				<li>간단 조립 및 검수 리포트</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- 역량/설비 -->
+<section id="capability">
+	<div class="container grid cols-2">
+		<div class="card reveal">
+			<h3>정밀/용량</h3>
+			<ul class="list">
+				<li>허용공차: <strong>±0.01mm</strong> (도면/소재/형상에 따라 협의)</li>
+				<li>최대 가공 크기(예시): 밀링 500×400×300 / 선반 Ø250×400</li>
+				<li>소재: 알루미늄 6061/7075, SUS304/316, 탄소강(S45C), 황동/동, POM/아세탈, PC/ABS 등</li>
+			</ul>
+		</div>
+		<div class="card reveal">
+			<h3>보유 설비</h3>
+			<ul class="list">
+				<li>CNC 밀링(3축) 1대, 범용 밀링 1대</li>
+				<li>범용 선반 1대</li>
+				<li>측정: 버니어/마이크로미터, 하이트게이지, 핀게이지</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- 작업 사례 (이미지 자리에 본인 사진 교체 가능) -->
+<section id="works">
+	<div class="container">
+		<h3>작업 사례</h3>
+		<p class="muted">의뢰 부품 특성상 사진은 예시입니다. 실제 사례는 문의 시 개별 공유해 드립니다.</p>
+		<div class="grid cols-3" style="margin-top:14px">
+			<div class="card reveal"><img alt="알루미늄 가공 예시" src="https://picsum.photos/seed/a/600/400"></div>
+			<div class="card reveal"><img alt="선반 가공 예시" src="https://picsum.photos/seed/b/600/400"></div>
+			<div class="card reveal"><img alt="소형 정밀 부품 예시" src="https://picsum.photos/seed/c/600/400"></div>
+		</div>
+	</div>
+</section>
+
+<!-- 진행 프로세스 -->
+<section>
+	<div class="container grid cols-3">
+		<div class="card reveal">
+			<h3>1) 도면/데이터</h3>
+			<p class="muted">STEP/IGES/STL, PDF, 사진 가능. 공차/재질/수량 기재.</p>
+		</div>
+		<div class="card reveal">
+			<h3>2) 검토/견적</h3>
+			<p class="muted">제작성 검토 후 납기/단가 제안. 필요 시 대체 공정 안내.</p>
+		</div>
+		<div class="card reveal">
+			<h3>3) 제작/검수/배송</h3>
+			<p class="muted">제작→검수(치수 체크)→포장/발송. 지역 방문 수령 협의.</p>
+		</div>
+	</div>
+</section>
+
+<!-- CTA 블록 -->
+<section>
+	<div class="container">
+		<div class="cta reveal">
+			<h3 style="margin-top:0">지금 바로 상담 받으세요</h3>
+			<p>소량·긴급 건, 시제품·연구부품 환영합니다. 전화로 빠르게 일정 잡아드립니다.</p>
+			<div style="display:flex;gap:10px;flex-wrap:wrap">
+				<a class="btn" href="tel:+821012345678">📞 전화 연결</a>
+				<a class="btn outline" href="#contact">견적 문의</a>
+				<a class="btn outline" href="https://map.naver.com/" target="_blank" rel="noopener">🗺️ 길찾기</a> <!-- TODO: 실제 지도 링크 -->
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 연락처/문의 -->
+<section id="contact">
+	<div class="container grid cols-2">
+		<div class="card reveal">
+			<h3>연락처</h3>
+			<p><strong>정밀가공 1인 공장</strong> <!-- TODO: 상호명 --><br>
+				전화: <a href="tel:+821012345678">010-1234-5678</a><br> <!-- TODO: 번호 -->
+				이메일: <a href="mailto:owner@example.com">owner@example.com</a> <!-- TODO: 메일 -->
+			</p>
+			<p class="muted">영업시간: 월–금 09:00–18:00 (주말/야간 협의)</p>
+			<p class="muted">주소: (예) 서울 서초구 ○○로 00-0, 1F <!-- TODO: 주소 --></p>
+		</div>
+		<div class="card reveal">
+			<h3>빠른 문의</h3>
+			<!-- 폼스프리/넷lify 등 서버리스 폼 사용 권장. 아래는 Formspree 예시 -->
+			<!-- TODO: action의 endpoint를 본인 것으로 교체하세요 https://formspree.io -->
+			<form action="https://formspree.io/f/your_form_id" method="POST">
+				<div class="row">
+					<p><label>성함<br><input name="name" required></label></p>
+					<p><label>연락처<br><input name="phone" inputmode="tel" placeholder="010-0000-0000" required></label></p>
+				</div>
+				<p><label>내용(재질/수량/공차/납기)<br><textarea name="message" placeholder="예) AL6061, 5EA, ±0.02, 납기 10/10 희망"></textarea></label></p>
+				<p class="note">파일 전송은 이메일로 보내주시면 더 빠릅니다. (STEP/IGES/STL, PDF, JPG 가능)</p>
+				<button class="btn" type="submit">문의 보내기</button>
+			</form>
+			<p class="note" style="margin-top:10px">※ GitHub Pages는 백엔드가 없어, 위와 같은 외부 폼 서비스를 이용합니다.</p>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+			<a class="btn outline" href="tel:+821012345678">📞 전화</a>
+			<a class="btn outline" href="sms:+821012345678">💬 문자</a>
+			<a class="btn outline" href="https://pf.kakao.com/" target="_blank" rel="noopener">🟡 카카오톡 채널</a> <!-- TODO -->
+		</div>
+		<p class="muted" style="margin-top:12px">© <span id="year"></span> 정밀가공 1인 공장. All rights reserved.</p>
+	</div>
+</footer>
+
+<script>
+	// 스크롤 등장 애니메이션
+	const onScroll=()=>document.querySelectorAll('.reveal').forEach(el=>{
+		const r=el.getBoundingClientRect(); if(r.top < innerHeight-60) el.classList.add('on');
+	}); addEventListener('scroll',onScroll,{passive:true}); onScroll();
+	// 연도 자동
+	document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
